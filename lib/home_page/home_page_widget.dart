@@ -22,40 +22,37 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.white,
-        body: Stack(
-          children: [
-            Align(
-              alignment: AlignmentDirectional(-0.05, 1.01),
-              child: Text(
-                'Copyright ElaraStacks 2021\n',
-                style: FlutterFlowTheme.bodyText1.override(
-                  fontFamily: 'Lexend Deca',
-                  color: FlutterFlowTheme.tertiaryColor,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0, 0),
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xFFCECECF),
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: Image.asset(
-                      'assets/images/Untitled design_(3).png',
-                    ).image,
+        body: SingleChildScrollView(
+          child: Container(
+            height: MediaQuery.of(context).size.height*1.1,
+            child: Stack(
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(-0.05, 1.01),
+                  child: Text(
+                    'Copyright ElaraStacks 2021\n',
+                    style: FlutterFlowTheme.bodyText1.override(
+                      fontFamily: 'Lexend Deca',
+                      color: FlutterFlowTheme.tertiaryColor,
+                    ),
                   ),
                 ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(2, 30, 0, 210),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFCECECF),
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: Image.asset(
+                        'assets/images/Untitled design_(3).png',
+                      ).image,
+                    ),
+                  ),
                   child: Column(
-                    mainAxisSize: MainAxisSize.max,
+
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 24),
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 24),
                         child: Image.asset(
                           'assets/images/aadhaar.png',
                           width: MediaQuery.of(context).size.width*0.8,
@@ -93,7 +90,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     text: 'Approve Requests',
                                     options: FFButtonOptions(
                                       width: 150,
-                                      height: 80,
+                                      height: 60,
                                       color: Color(0xFFB7302E),
                                       textStyle: FlutterFlowTheme.subtitle2.override(
                                         fontFamily: 'Lexend Deca',
@@ -119,7 +116,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     text: 'Update Logs',
                                     options: FFButtonOptions(
                                       width: 150,
-                                      height: 80,
+                                      height: 60,
                                       color: Color(0xFFB7302E),
                                       textStyle: FlutterFlowTheme.subtitle2.override(
                                         fontFamily: 'Lexend Deca',
@@ -146,8 +143,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               },
                               text: 'Update Aadhar Address',
                               options: FFButtonOptions(
-                                width: 350,
-                                height: 80,
+                                width: 3500,
+                                height: 60,
                                 color: Color(0xFFB7302E),
                                 textStyle: FlutterFlowTheme.subtitle2.override(
                                   fontFamily: 'Lexend Deca',
@@ -192,7 +189,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                                     child: Container(
                                       width: 100,
-                                      height: 100,
+                                      height: 90,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
@@ -204,7 +201,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ),
                                   Padding(
                                     padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 20, 0),
+                                    EdgeInsetsDirectional.fromSTEB(30, 0, 20, 0),
                                     child: Container(
                                       width: 200,
                                       height: 100,
@@ -232,7 +229,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               FlutterFlowTheme.bodyText1.override(
                                                 fontFamily: 'Lexend Deca',
                                                 color: FlutterFlowTheme.dark900,
-                                                fontSize: 13,
+                                                fontSize: 12,
                                                 fontWeight: FontWeight.w300,
                                               ),
                                             ),
@@ -302,7 +299,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               FlutterFlowTheme.bodyText1.override(
                                                 fontFamily: 'Lexend Deca',
                                                 color: FlutterFlowTheme.dark900,
-                                                fontSize: 13,
+                                                fontSize: 12,
                                                 fontWeight: FontWeight.w300,
                                               ),
                                             ),
@@ -319,10 +316,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       )
                     ],
                   ),
-                ),
-              ),
-            )
-          ],
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
