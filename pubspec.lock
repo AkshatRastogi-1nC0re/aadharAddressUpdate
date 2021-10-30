@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.2"
+  animated_splash_screen:
+    dependency: "direct main"
+    description:
+      name: animated_splash_screen
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   archive:
     dependency: transitive
     description:
@@ -426,7 +433,7 @@ packages:
       name: page_transition
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.4"
+    version: "2.0.1-nullsafety.0"
   path:
     dependency: transitive
     description:
@@ -483,6 +490,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.0"
+  pinput:
+    dependency: "direct main"
+    description:
+      name: pinput
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.1"
   platform:
     dependency: transitive
     description:
@@ -558,6 +572,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  slide_popup_dialog:
+    dependency: "direct main"
+    description:
+      name: slide_popup_dialog
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   source_gen:
     dependency: transitive
     description:

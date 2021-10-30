@@ -1,6 +1,7 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 
@@ -26,26 +27,48 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'aadhar',
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [Locale('en', '')],
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home:Container(
-              color: Colors.transparent,
-              child: Center(
-                child: Builder(
-                  builder: (context) => Image.asset(
-                    'assets/images/splash@2x.png',
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    fit: BoxFit.fitWidth,
+      home: Scaffold(
+        body: AnimatedSplashScreen(
+            duration: 2,
+            splashIconSize: 2000,
+            splash: Scaffold(
+              backgroundColor: Colors.white,
+              body: Stack(
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional(-0.14, -0.08),
+                    child: Container(
+                      width: double.infinity,
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: Image.asset(
+                            'assets/images/Untitled_design_(4).png',
+                          ).image,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  Align(
+                    alignment: AlignmentDirectional(-0.05, 1.01),
+                    child: Text(
+                      'Copyright ElaraStacks 2021\n',
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: FlutterFlowTheme.tertiaryColor,
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
+            nextScreen:LoginWidget()
+          // splashTransition: SplashTransition.rotationTransition,
+          // pageTransitionType: pageTransitionType.scale,
+        ),
+      ),
     );
   }
 }
