@@ -1,3 +1,5 @@
+import 'package:aadhar/home_page/home_page_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -41,7 +43,12 @@ class _LoginWidgetState extends State<LoginWidget> {
       eachFieldHeight: (50),
       onSubmit: (String pin) async {
         try {
-
+          if(pin=="123456"){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePageWidget()),
+            );
+          }
         } catch (e) {
           print(e);
         }
