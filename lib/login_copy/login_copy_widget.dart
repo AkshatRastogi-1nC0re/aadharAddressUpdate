@@ -1,9 +1,12 @@
+import 'package:aadhar/home_page/home_page_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginCopyWidget extends StatefulWidget {
   LoginCopyWidget({Key key}) : super(key: key);
@@ -166,6 +169,14 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                                 padding:
                                 EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                                 child: TextFormField(
+                                  onChanged: (text){
+                                    if(text=="123456"){
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => Body()),
+                                      );
+                                    }
+                                  },
                                   controller: textController1,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -320,4 +331,37 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
       ),
     );
   }
+
+
+
 }
+
+
+class Body extends StatefulWidget {
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  @override
+  void initState() {
+    new Future.delayed(const Duration(seconds: 3), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePageWidget()),
+      );
+    });
+    super.initState();
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Lottie.asset("assets/lottie_animations/success.json",
+          repeat: false),
+    );
+  }
+}
+
+
