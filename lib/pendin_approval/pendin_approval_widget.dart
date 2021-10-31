@@ -1,3 +1,5 @@
+import 'package:aadhar/flutter_flow/flutter_flow_widgets.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +25,7 @@ class _PendinApprovalWidgetState extends State<PendinApprovalWidget> {
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Container(
-            height: MediaQuery.of(context).size.height*1.1,
+            height: MediaQuery.of(context).size.height*1.13,
             child: Stack(
               children: [
                 Align(
@@ -205,7 +207,8 @@ class _PendinApprovalWidgetState extends State<PendinApprovalWidget> {
                             ),
                           ),
                           Divider(
-                            color: FlutterFlowTheme.background,
+                            thickness: 2,
+                            color: Colors.red,
                           ),
                           Align(
                             alignment: AlignmentDirectional(-1, 0),
@@ -276,6 +279,7 @@ class _PendinApprovalWidgetState extends State<PendinApprovalWidget> {
                               ),
                             ),
                           ),
+
                           Align(
                             alignment: AlignmentDirectional(-1, 0),
                             child: Padding(
@@ -305,7 +309,7 @@ class _PendinApprovalWidgetState extends State<PendinApprovalWidget> {
                           Align(
                             alignment: AlignmentDirectional(-1, 0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(20, 5, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(20, 5, 0, 10),
                               child: Text(
                                 'Pincode - 108445',
                                 style: FlutterFlowTheme.bodyText1.override(
@@ -315,58 +319,93 @@ class _PendinApprovalWidgetState extends State<PendinApprovalWidget> {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text(
-                                  'Verification Code : ',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.dark900,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Text(
-                                  '136221',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.dark900,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: (){
-                                    print("Copied");
-                                  },
-                                  child: Icon(
-                                    Icons.content_copy,
-                                    color: Colors.black,
-                                    size: 24,
-                                  ),
-                                )
-                              ],
-                            ),
+                          Divider(
+                            thickness: 2,
+                            color: Colors.red,
                           ),
-                          Align(
-                            alignment: AlignmentDirectional(0.65, 0.97),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                              child: Text(
-                                'Send this code to the person to confirm change of address\n',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.background,
-                                  fontSize: 12,
+                          codeVisible==true?Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Text(
+                                      'Verification Code : ',
+                                      style: FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.dark900,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    Text(
+                                      '136221',
+                                      style: FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.dark900,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    GestureDetector(
+                                      onTap: (){
+                                        print("Copied");
+                                      },
+                                      child: Icon(
+                                        Icons.content_copy,
+                                        color: Colors.black,
+                                        size: 24,
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
+                              Align(
+                                alignment: AlignmentDirectional(0.65, 0.97),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                  child: Text(
+                                    'Send this code to the person to confirm change of address\n',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: FlutterFlowTheme.background,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ):Padding(
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                            child: FFButtonWidget(
+                              onPressed: () {
+                                setState(() {
+                                  codeVisible=true;
+                                });
+                              },
+                              text: 'Generate Verification Code',
+                              options: FFButtonOptions(
+                                width: 250,
+                                height: 60,
+                                color: Color(0xFFB7302E),
+                                textStyle: FlutterFlowTheme.subtitle2.override(
+                                  fontFamily: 'Lexend Deca',
+                                  fontSize: 14,
+                                ),
+                                elevation: 4,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 2,
+                                ),
+                                borderRadius: 15,
+                              ),
                             ),
-                          )
+                          ),
+
                         ],
                       ),
                     ),
