@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flip_card/flip_card.dart';
 
 class HomePageWidget extends StatefulWidget {
   HomePageWidget({Key key}) : super(key: key);
@@ -51,21 +52,32 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 24),
-                        child: Image.asset(
-                          'assets/images/aadhaar.png',
-                          width: MediaQuery.of(context).size.width*0.8,
-                          fit: BoxFit.cover,
+                      FlipCard(
+                        direction: FlipDirection.HORIZONTAL,
+                        front: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 24),
+                          child: Image.asset(
+                            'assets/images/6.png',
+                            width: MediaQuery.of(context).size.width*0.8,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        back: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 24),
+                          child: Image.asset(
+                            'assets/images/7.png',
+                            width: MediaQuery.of(context).size.width*0.8,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 20),
+                            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 5),
                             child: AutoSizeText(
-                              'Aadhar Address Authenticator',
+                              'Aadhaar Address Authenticator',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Open Sans',
                                 color: FlutterFlowTheme.dark900,
@@ -138,10 +150,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(20, 15, 20, 20),
                             child: FFButtonWidget(
+                              icon: Icon(Icons.location_pin),
                               onPressed: () {
-                                print('Button pressed ...');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                                );
                               },
-                              text: 'Update Aadhar Address',
+                              text: 'Update Aadhaar Address',
                               options: FFButtonOptions(
                                 width: 3500,
                                 height: 60,
@@ -259,7 +275,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                                     child: Container(
                                       width: 100,
-                                      height: 100,
+                                      height: 90,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
@@ -271,7 +287,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   ),
                                   Padding(
                                     padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 20, 0),
+                                    EdgeInsetsDirectional.fromSTEB(30, 0, 20, 0),
                                     child: Container(
                                       width: 200,
                                       height: 100,
@@ -311,7 +327,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ],
                               ),
                             ),
-                          )
+                          ),
                         ],
                       )
                     ],
