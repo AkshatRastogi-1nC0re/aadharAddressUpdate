@@ -356,10 +356,12 @@ class _BodyState extends State<Body> {
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Lottie.asset("assets/lottie_animations/success.json",
-          repeat: false),
+    return SafeArea(
+      child: Container(
+        color: Colors.white,
+        child: Lottie.asset("assets/lottie_animations/success.json",
+            repeat: false),
+      ),
     );
   }
 }

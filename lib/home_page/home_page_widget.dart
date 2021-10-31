@@ -1,4 +1,5 @@
 import 'package:aadhar/login_copy/login_copy_widget.dart';
+import 'package:aadhar/pendin_approval/pendin_approval_widget.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -99,7 +100,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                                   child: FFButtonWidget(
                                     onPressed: () {
-                                      print('Button pressed ...');
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => PendinApprovalWidget()),
+                                      );
                                     },
                                     text: 'Approve Requests',
                                     options: FFButtonOptions(
