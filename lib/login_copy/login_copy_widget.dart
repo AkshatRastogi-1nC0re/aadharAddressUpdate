@@ -25,16 +25,13 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Align(
-            alignment: AlignmentDirectional(-0.14, -0.08),
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
+    return SafeArea(
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Colors.white,
+        body: Stack(
+          children: [
+            Container(
               decoration: BoxDecoration(
                 color: Colors.white,
                 image: DecorationImage(
@@ -44,8 +41,24 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                   ).image,
                 ),
               ),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+            ),
+            Center(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(vertical: 20),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -171,18 +184,18 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                 ),
               ),
             ),
-          ),
-          Align(
-            alignment: AlignmentDirectional(-0.05, 1.01),
-            child: Text(
-              'Copyright ElaraStacks 2021\n',
-              style: FlutterFlowTheme.bodyText1.override(
-                fontFamily: 'Lexend Deca',
-                color: FlutterFlowTheme.tertiaryColor,
+            Align(
+              alignment: AlignmentDirectional(-0.05, 1.01),
+              child: Text(
+                'Copyright ElaraStacks 2021\n',
+                style: FlutterFlowTheme.bodyText1.override(
+                  fontFamily: 'Lexend Deca',
+                  color: FlutterFlowTheme.tertiaryColor,
+                ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
