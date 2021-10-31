@@ -34,6 +34,9 @@ Email: [udyan2@gamil.com](mailto:udyan2@gamil.com)
 [Aditi Sheemar](https://github.com/yashsharma1702)
 Email: [aditiramen69@gmail.com](mailto:aditiramen69@gmail.com)
 
+[Yash Sharma](https://github.com/udyan2)
+Email: [E20CSE158@bennett.edu.in](mailto:E20CSE158@bennett.edu.in)
+
 
 ## Visitors Count
 
