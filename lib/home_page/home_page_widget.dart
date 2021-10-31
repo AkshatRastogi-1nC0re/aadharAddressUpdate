@@ -216,8 +216,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/658/600',
+                                      child: Image.asset(
+                                          'assets/images/modi.jpg',
                                       ),
                                     ),
                                   ),
@@ -234,24 +234,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
-                                            'Likely game scenarios as playoff season gets closer',
+                                            'What Is Digital Health ID? Here’s What You Need to Know',
                                             style:
                                             FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'Lexend Deca',
                                               color: FlutterFlowTheme.dark900,
                                               fontWeight: FontWeight.w600,
+                                              fontSize: 13
                                             ),
                                           ),
                                           Padding(
                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                 0, 10, 0, 0),
                                             child: Text(
-                                              'Despite a pair of losses, this baseball team is still in the fight to make the playoffs this year.',
+                                              'Prime Minister Narendra Modi launches the National Digital Health a unified healthcare programme.',
                                               style:
                                               FlutterFlowTheme.bodyText1.override(
                                                 fontFamily: 'Lexend Deca',
                                                 color: FlutterFlowTheme.dark900,
-                                                fontSize: 12,
+                                                fontSize: 11,
                                                 fontWeight: FontWeight.w300,
                                               ),
                                             ),
@@ -286,8 +287,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
-                                      child: Image.network(
-                                        'https://picsum.photos/seed/658/600',
+                                      child: Image.asset(
+                                        'assets/images/family.png',
                                       ),
                                     ),
                                   ),
@@ -304,7 +305,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
-                                            'Likely game scenarios as playoff season gets closer',
+                                            '‘Aadhaar’ for your family’          ',
                                             style:
                                             FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'Lexend Deca',
@@ -316,7 +317,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                 0, 10, 0, 0),
                                             child: Text(
-                                              'Despite a pair of losses, this baseball team is still in the fight to make the playoffs this year.',
+                                              'Government is exploring the prospect of developing a “universal family ID”',
                                               style:
                                               FlutterFlowTheme.bodyText1.override(
                                                 fontFamily: 'Lexend Deca',
