@@ -11,7 +11,7 @@ After the landlord approves the address of the user, the address will also be up
 
 ## App Screenshots and Videos
 
-[![Click Here](https://linktr.ee/akshat.rastogi)]
+(https://linktr.ee/akshat.rastogi)
 
 ## Tech Stack Used
 
