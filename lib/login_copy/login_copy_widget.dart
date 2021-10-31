@@ -239,7 +239,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                         isTimer==true?Padding(
                           padding: EdgeInsets.only(top: 10),
                           child: CircularCountDownTimer(
-                            duration: 900,
+                            duration: 60,
                             initialDuration: 0,
                             controller: _controller,
                             width: 70,
