@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 
 class LoginCopyWidget extends StatefulWidget {
   LoginCopyWidget({Key key}) : super(key: key);
@@ -22,6 +23,10 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
     super.initState();
     textController = TextEditingController();
   }
+
+  CountDownController _controller = CountDownController();
+
+  bool isTimer=false;
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +146,61 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                         ),
                       ),
                     ),
-                    Padding(
+                    isTimer==true?Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 15, 20, 10),
+                      child: Container(
+                        width: double.infinity,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF393A3C),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Align(
+                          alignment: AlignmentDirectional(-1, -0.05),
+                          child: Padding(
+                            padding:
+                            EdgeInsetsDirectional.fromSTEB(12, 0, 20, 0),
+                            child: TextFormField(
+                              controller: textController,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                hintText: "Enter Otp on Lanlord's Number",
+                                hintStyle: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.tertiaryColor,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(4.0),
+                                    topRight: Radius.circular(4.0),
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(4.0),
+                                    topRight: Radius.circular(4.0),
+                                  ),
+                                ),
+                              ),
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.tertiaryColor,
+                              ),
+                              keyboardType: TextInputType.number,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ):Center(),
+                    isTimer==false?Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                       child: CheckboxListTile(
                         value: checkboxListTileValue ??= false,
@@ -160,10 +219,47 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                         dense: false,
                         controlAffinity: ListTileControlAffinity.trailing,
                       ),
-                    ),
-                    FFButtonWidget(
+                    ):Center(),
+                    isTimer==true?Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: CircularCountDownTimer(
+                        duration: 900,
+                        initialDuration: 0,
+                        controller: _controller,
+                        width: 70,
+                        height: 70,
+                        ringColor: Colors.grey[300],
+                        ringGradient: null,
+                        fillColor: Color(0xffc03231),
+                        fillGradient: null,
+                        backgroundColor: Color(0xff393a3c),
+                        backgroundGradient: null,
+                        // strokeWidth: 20.0,
+                        strokeCap: StrokeCap.round,
+                        textStyle: TextStyle(
+                            fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
+                        textFormat: CountdownTextFormat.S,
+                        isReverse: false,
+                        isReverseAnimation: false,
+                        isTimerTextShown: true,
+                        autoStart: true,
+                        onStart: () {
+                          print('Countdown Started');
+                        },
+                        onComplete: () {
+                          print('Countdown Ended');
+                        },
+                      ),
+                    ):FFButtonWidget(
                       onPressed: () {
-                        print('Button pressed ...');
+                        setState(() {
+
+
+                        });
+                        isTimer=true;
+                        _controller.start();
+
+
                       },
                       text: 'Request Verification',
                       options: FFButtonOptions(
@@ -179,7 +275,25 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                         borderRadius: 15,
                       ),
                       loading: _loadingButton,
-                    )
+                    ),
+                    isTimer==true?GestureDetector(
+                      onTap: (){
+                        _controller.start();
+                      },
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          'Resend Otp   ',
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Lexend Deca',
+                            color: FlutterFlowTheme.dark900,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ):Center(),
+
                   ],
                 ),
               ),
