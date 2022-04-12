@@ -1,11 +1,8 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-
-import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:aadhar/login/login_widget.dart';
 import 'package:aadhar/home_page/home_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
@@ -22,8 +19,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -64,10 +59,10 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
             ),
-            nextScreen:LoginWidget()
-          // splashTransition: SplashTransition.rotationTransition,
-          // pageTransitionType: pageTransitionType.scale,
-        ),
+            nextScreen: LoginWidget()
+            // splashTransition: SplashTransition.rotationTransition,
+            // pageTransitionType: pageTransitionType.scale,
+            ),
       ),
     );
   }

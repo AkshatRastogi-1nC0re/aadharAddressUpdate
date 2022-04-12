@@ -31,7 +31,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
 
   CountDownController _controller = CountDownController();
 
-  bool isTimer=false;
+  bool isTimer = false;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Container(
-            height: MediaQuery.of(context).size.height-20,
+            height: MediaQuery.of(context).size.height - 20,
             child: Stack(
               children: [
                 Container(
@@ -69,7 +69,6 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                         ),
                       ],
                     ),
-
                     margin: EdgeInsets.symmetric(horizontal: 20),
                     padding: EdgeInsets.symmetric(vertical: 20),
                     child: Column(
@@ -101,7 +100,8 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 15, 20, 10),
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 15, 20, 10),
                           child: Container(
                             width: double.infinity,
                             height: 60,
@@ -112,14 +112,15 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                             child: Align(
                               alignment: AlignmentDirectional(-1, -0.05),
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(12, 0, 20, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12, 0, 20, 0),
                                 child: TextFormField(
                                   controller: textController,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     hintText: 'Enter Phone Number',
-                                    hintStyle: FlutterFlowTheme.bodyText1.override(
+                                    hintStyle:
+                                        FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Lexend Deca',
                                       color: FlutterFlowTheme.tertiaryColor,
                                     ),
@@ -154,162 +155,176 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
                             ),
                           ),
                         ),
-                        isTimer==true?Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 15, 20, 10),
-                          child: Container(
-                            width: double.infinity,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              color: Color(0xFF393A3C),
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Align(
-                              alignment: AlignmentDirectional(-1, -0.05),
-                              child: Padding(
+                        isTimer == true
+                            ? Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20, 15, 20, 10),
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF393A3C),
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(-1, -0.05),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          12, 0, 0, 0),
+                                      child: TextFormField(
+                                        onChanged: (text) {
+                                          if (text == "123456") {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) => Body()),
+                                            );
+                                          }
+                                        },
+                                        controller: textController1,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          hintText:
+                                              "Enter Code Generated on Landlords App",
+                                          hintStyle: FlutterFlowTheme.bodyText1
+                                              .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color:
+                                                FlutterFlowTheme.tertiaryColor,
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1,
+                                            ),
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                              topLeft: Radius.circular(4.0),
+                                              topRight: Radius.circular(4.0),
+                                            ),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1,
+                                            ),
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                              topLeft: Radius.circular(4.0),
+                                              topRight: Radius.circular(4.0),
+                                            ),
+                                          ),
+                                        ),
+                                        style:
+                                            FlutterFlowTheme.bodyText1.override(
+                                          fontFamily: 'Lexend Deca',
+                                          color: FlutterFlowTheme.tertiaryColor,
+                                        ),
+                                        keyboardType: TextInputType.number,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : Center(),
+                        isTimer == false
+                            ? Padding(
                                 padding:
-                                EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
-                                child: TextFormField(
-                                  onChanged: (text){
-                                    if(text=="123456"){
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => Body()),
-                                      );
-                                    }
-                                  },
-                                  controller: textController1,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    hintText: "Enter Otp on Lanlord's Number",
-                                    hintStyle: FlutterFlowTheme.bodyText1.override(
+                                    EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                                child: CheckboxListTile(
+                                  value: checkboxListTileValue ??= false,
+                                  onChanged: (newValue) => setState(
+                                      () => checkboxListTileValue = newValue),
+                                  title: Text(
+                                    'I agree to the Terms and Conditions',
+                                    style: FlutterFlowTheme.title3.override(
                                       fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.tertiaryColor,
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(4.0),
-                                        topRight: Radius.circular(4.0),
-                                      ),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(4.0),
-                                        topRight: Radius.circular(4.0),
-                                      ),
+                                      color: FlutterFlowTheme.background,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
                                     ),
                                   ),
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.tertiaryColor,
-                                  ),
-                                  keyboardType: TextInputType.number,
+                                  tileColor: Colors.white,
+                                  dense: false,
+                                  controlAffinity:
+                                      ListTileControlAffinity.trailing,
                                 ),
+                              )
+                            : Center(),
+                        isTimer == true
+                            ? Padding(
+                                padding: EdgeInsets.only(top: 10),
+                                child: CircularCountDownTimer(
+                                  duration: 60,
+                                  initialDuration: 0,
+                                  controller: _controller,
+                                  width: 70,
+                                  height: 70,
+                                  ringColor: Colors.grey[300],
+                                  ringGradient: null,
+                                  fillColor: Color(0xffc03231),
+                                  fillGradient: null,
+                                  backgroundColor: Color(0xff393a3c),
+                                  backgroundGradient: null,
+                                  // strokeWidth: 20.0,
+                                  strokeCap: StrokeCap.round,
+                                  textStyle: TextStyle(
+                                      fontSize: 20.0,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                  textFormat: CountdownTextFormat.S,
+                                  isReverse: false,
+                                  isReverseAnimation: false,
+                                  isTimerTextShown: true,
+                                  autoStart: true,
+                                  onStart: () {
+                                    print('Countdown Started');
+                                  },
+                                  onComplete: () {
+                                    print('Countdown Ended');
+                                  },
+                                ),
+                              )
+                            : FFButtonWidget(
+                                onPressed: () {
+                                  setState(() {});
+                                  isTimer = true;
+                                  _controller.start();
+                                },
+                                text: 'Request Verification',
+                                options: FFButtonOptions(
+                                  width: 200,
+                                  height: 50,
+                                  color: Color(0xFFB7302E),
+                                  textStyle: FlutterFlowTheme.subtitle2,
+                                  elevation: 4,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 2,
+                                  ),
+                                  borderRadius: 15,
+                                ),
+                                loading: _loadingButton,
                               ),
-                            ),
-                          ),
-                        ):Center(),
-                        isTimer==false?Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
-                          child: CheckboxListTile(
-                            value: checkboxListTileValue ??= false,
-                            onChanged: (newValue) =>
-                                setState(() => checkboxListTileValue = newValue),
-                            title: Text(
-                              'I agree to the Terms and Conditions',
-                              style: FlutterFlowTheme.title3.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.background,
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                            tileColor: FlutterFlowTheme.dark900,
-                            dense: false,
-                            controlAffinity: ListTileControlAffinity.trailing,
-                          ),
-                        ):Center(),
-                        isTimer==true?Padding(
-                          padding: EdgeInsets.only(top: 10),
-                          child: CircularCountDownTimer(
-                            duration: 60,
-                            initialDuration: 0,
-                            controller: _controller,
-                            width: 70,
-                            height: 70,
-                            ringColor: Colors.grey[300],
-                            ringGradient: null,
-                            fillColor: Color(0xffc03231),
-                            fillGradient: null,
-                            backgroundColor: Color(0xff393a3c),
-                            backgroundGradient: null,
-                            // strokeWidth: 20.0,
-                            strokeCap: StrokeCap.round,
-                            textStyle: TextStyle(
-                                fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
-                            textFormat: CountdownTextFormat.S,
-                            isReverse: false,
-                            isReverseAnimation: false,
-                            isTimerTextShown: true,
-                            autoStart: true,
-                            onStart: () {
-                              print('Countdown Started');
-                            },
-                            onComplete: () {
-                              print('Countdown Ended');
-                            },
-                          ),
-                        ):FFButtonWidget(
-                          onPressed: () {
-                            setState(() {
-
-
-                            });
-                            isTimer=true;
-                            _controller.start();
-
-
-                          },
-                          text: 'Request Verification',
-                          options: FFButtonOptions(
-                            width: 200,
-                            height: 50,
-                            color: Color(0xFFB7302E),
-                            textStyle: FlutterFlowTheme.subtitle2,
-                            elevation: 4,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 2,
-                            ),
-                            borderRadius: 15,
-                          ),
-                          loading: _loadingButton,
-                        ),
-                        isTimer==true?GestureDetector(
-                          onTap: (){
-                            _controller.start();
-                          },
-                          child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              'Resend Otp   ',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.dark900,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ):Center(),
-
+                        isTimer == true
+                            ? GestureDetector(
+                                onTap: () {
+                                  _controller.start();
+                                },
+                                child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Text(
+                                    'Resend Otp   ',
+                                    style: FlutterFlowTheme.bodyText1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: FlutterFlowTheme.dark900,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : Center(),
                       ],
                     ),
                   ),
@@ -331,14 +346,9 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget> {
       ),
     );
   }
-
-
-
 }
 
-
 class Body extends StatefulWidget {
-
   @override
   _BodyState createState() => _BodyState();
 }
@@ -354,6 +364,7 @@ class _BodyState extends State<Body> {
     });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -365,5 +376,3 @@ class _BodyState extends State<Body> {
     );
   }
 }
-
-
